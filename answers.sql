@@ -72,13 +72,18 @@ SELECT ci.name FROM city ci JOIN country co ON ci.countrycode = co.code WHERE co
 
 -- Clue #5: Oh no, she pulled a switch – there are two cities with very similar names, but in totally different parts of the globe! She's headed to South America as we speak; go find a city whose name is like the one we were headed to, but doesn't end the same. Find out the city, and do another search for what country it's in. Hurry!
 
+SELECT co.name FROM country co JOIN city ci ON co.code = ci.countrycode WHERE co.region = 'South America' AND ci.name LIKE 'Serra%';
 
+--  -[ RECORD 5 ]--
+-- name       | Brazil
 
 
 -- Clue #6: We're close! Our South American agent says she just got a taxi at the airport, and is headed towards the capital! Look up the country's capital, and get there pronto! Send us the name of where you're headed and we'll follow right behind you!
 
+SELECT ci.name FROM city ci JOIN country co ON co.capital = ci.id WHERE co.name = 'Brazil';
 
-
+--  -[ RECORD 5 ]--
+-- name       | Brasï¿½lia
 
 -- Clue #7: She knows we're on to her – her taxi dropped her off at the international airport, and she beat us to the boarding gates. We have one chance to catch her, we just have to know where she's heading and beat her to the landing dock.
 
@@ -91,10 +96,15 @@ SELECT ci.name FROM city ci JOIN country co ON ci.countrycode = co.code WHERE co
 -- So I'm off to add one to the population I find
 -- In a city of ninety-one thousand and now, eighty five.
 
+SELECT ci.name FROM city ci JOIN country co ON ci.countrycode = co.code WHERE ci.population = 91084;
+
+--  -[ RECORD 5 ]--
+-- name       | Santa Monica
+
 
 -- We're counting on you, gumshoe. Find out where she's headed, send us the info, and we'll be sure to meet her at the gates with bells on.
 
 
 
 
--- She's in ____________________________!
+-- She's in ________Santa_Monica________!
