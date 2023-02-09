@@ -104,7 +104,12 @@ SELECT ci.name FROM city ci JOIN country co ON ci.countrycode = co.code WHERE ci
 
 -- We're counting on you, gumshoe. Find out where she's headed, send us the info, and we'll be sure to meet her at the gates with bells on.
 
-
-
-
 -- She's in ________Santa_Monica________!
+
+-- Update Entry
+
+UPDATE city SET name = 'Brasília' WHERE name = 'Brasï¿½lia';
+SELECT name FROM city WHERE name = 'Brasília';
+
+--  -[ RECORD 5 ]--
+-- name       | Brasília
